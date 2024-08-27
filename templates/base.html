@@ -1,103 +1,79 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <script src="{% static 'js/scripts.js' %}"></script>
 </head>
 <body>
-    <div class="content">
-        <div class="section">
-            <div>
-                Neural Noise
+    <main>
+        <ul class='slider'>
+          <li class='item' style="background-image: url('https://cdn.mos.cms.futurecdn.net/dP3N4qnEZ4tCTCLq59iysd.jpg')">
+            <div class='content'>
+              <h2 class='title'>"Lossless Youths"</h2>
+              <p class='description'> Lorem ipsum, dolor sit amet consectetur
+              adipisicing elit. Tempore fuga voluptatum, iure corporis inventore
+              praesentium nisi. Id laboriosam ipsam enim.  </p>
+              <button>Read More</button>
             </div>
-        </div>
-        <div class="section">
-            <div>
-                GLSL shader based on <a href="https://x.com/zozuar/" target="_blank">@zozuar</a> <a href="https://x.com/zozuar/status/1625182758745128981/" target="_blank">artwork</a>
+          </li>
+          <li class='item' style="background-image: url('https://i.redd.it/tc0aqpv92pn21.jpg')">
+            <div class='content'>
+              <h2 class='title'>"Estrange Bond"</h2>
+              <p class='description'> Lorem ipsum, dolor sit amet consectetur
+              adipisicing elit. Tempore fuga voluptatum, iure corporis inventore
+              praesentium nisi. Id laboriosam ipsam enim.  </p>
+              <button>Read More</button>
             </div>
-        </div>
-        <div class="section">
-            <div>
-                <a href="https://linkedin.com/in/ksenia-kondrashova/" target="_blank">linkedIn</a>
-                  <a href="https://codepen.io/ksenia-k" target="_blank">codepen</a>
-                  <a href="https://x.com/uuuuuulala" target="_top">X (twitter)</a>
+          </li>
+          <li class='item' style="background-image: url('https://wharferj.files.wordpress.com/2015/11/bio_north.jpg')">
+            <div class='content'>
+              <h2 class='title'>"The Gate Keeper"</h2>
+              <p class='description'> Lorem ipsum, dolor sit amet consectetur
+              adipisicing elit. Tempore fuga voluptatum, iure corporis inventore
+              praesentium nisi. Id laboriosam ipsam enim.  </p>
+              <button>Read More</button>
             </div>
-        </div>
-    </div>
-    
-    <canvas id="neuro"></canvas>
-    
-    
-    <script type="x-shader/x-fragment" id="vertShader">
-        precision mediump float;
-    
-        varying vec2 vUv;
-        attribute vec2 a_position;
-    
-        void main() {
-            vUv = .5 * (a_position + 1.);
-            gl_Position = vec4(a_position, 0.0, 1.0);
-        }
-    </script>
-    
-    <script type="x-shader/x-fragment" id="fragShader">
-        precision mediump float;
-    
-        varying vec2 vUv;
-        uniform float u_time;
-        uniform float u_ratio;
-        uniform vec2 u_pointer_position;
-        uniform float u_scroll_progress;
-    
-        vec2 rotate(vec2 uv, float th) {
-            return mat2(cos(th), sin(th), -sin(th), cos(th)) * uv;
-        }
-    
-        float neuro_shape(vec2 uv, float t, float p) {
-            vec2 sine_acc = vec2(0.);
-            vec2 res = vec2(0.);
-            float scale = 8.;
-    
-            for (int j = 0; j < 15; j++) {
-                uv = rotate(uv, 1.);
-                sine_acc = rotate(sine_acc, 1.);
-                vec2 layer = uv * scale + float(j) + sine_acc - t;
-                sine_acc += sin(layer);
-                res += (.5 + .5 * cos(layer)) / scale;
-                scale *= (1.2 - .07 * p);
-            }
-            return res.x + res.y;
-        }
-    
-        void main() {
-            vec2 uv = .5 * vUv;
-            uv.x *= u_ratio;
-    
-            vec2 pointer = vUv - u_pointer_position;
-            pointer.x *= u_ratio;
-            float p = clamp(length(pointer), 0., 1.);
-            p = .5 * pow(1. - p, 2.);
-    
-            float t = .001 * u_time;
-            vec3 color = vec3(0.);
-    
-            float noise = neuro_shape(uv, t, p);
-    
-            noise = 1.2 * pow(noise, 3.);
-            noise += pow(noise, 10.);
-            noise = max(.0, noise - .5);
-            noise *= (1. - length(vUv - .5));
-    
-            color = normalize(vec3(.2, .5 + .4 * cos(3. * u_scroll_progress), .5 + .5 * sin(3. * u_scroll_progress)));
-    
-            color = color * noise;
-    
-            gl_FragColor = vec4(color, noise);
-        }
-    </script>
+          </li>
+          <li class='item' style="background-image: url('https://images7.alphacoders.com/878/878663.jpg')">
+            <div class='content'>
+              <h2 class='title'>"Last Trace Of Us"</h2>
+              <p class='description'>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.
+              </p>
+              <button>Read More</button>
+            </div>
+          </li>
+          <li class='item' style="background-image: url('https://theawesomer.com/photos/2017/07/simon_stalenhag_the_electric_state_6.jpg')">
+            <div class='content'>
+              <h2 class='title'>"Urban Decay"</h2>
+              <p class='description'>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.
+              </p>
+              <button>Read More</button>
+            </div>
+          </li>
+          <li class='item' style="background-image: url('https://da.se/app/uploads/2015/09/simon-december1994.jpg')">
+            <div class='content'>
+              <h2 class='title'>"The Migration"</h2>
+              <p class='description'> Lorem ipsum, dolor sit amet consectetur
+              adipisicing elit. Tempore fuga voluptatum, iure corporis inventore
+              praesentium nisi. Id laboriosam ipsam enim.  </p>
+              <button>Read More</button>
+            </div>
+          </li>
+        </ul>
+        <nav class='nav'>
+          <ion-icon class='btn prev' name="arrow-back-outline"></ion-icon>
+          <ion-icon class='btn next' name="arrow-forward-outline"></ion-icon>
+        </nav>
+      </main>
+      
+      <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+      <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
