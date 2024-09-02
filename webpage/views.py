@@ -6,11 +6,11 @@ from django.shortcuts import render, HttpResponse
 def indexPage(request):
     return render(request, 'index.html')
 
-def detailsPage(request):
-    return render(request, 'details.html')
+def loginPage(request):
+    return render(request, 'login.html')
 
-def browsePage(request):
-    return render(request, 'browse.html')
+def registersPage(request):
+    return render(request, 'registers.html')
 
 def profilePage(request):
     return render(request, 'profile.html')

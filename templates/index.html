@@ -53,7 +53,7 @@ https://templatemo.com/tm-579-cyborg-gaming
             <div class="col-12">
                 <nav class="main-nav">
                     <!-- ***** Logo Start ***** -->
-                    <a href="index/" class="logo">
+                    <a href="{% url "index" %}" class="logo">
                         <img src="assets/images/logo.png" alt="">
                     </a>
                     <!-- ***** Logo End ***** -->
@@ -67,11 +67,11 @@ https://templatemo.com/tm-579-cyborg-gaming
                     <!-- ***** Search End ***** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
-                        <li><a href="index/" class="active">Home</a></li>
-                        <li><a href="browse/">Browse</a></li>
-                        <li><a href="details/">Details</a></li>
-                        <li><a href="streams/">Streams</a></li>
-                        <li><a href="profile/">Profile <img src="assets/images/profile-header.jpg" alt=""></a></li>
+                        <li><a href="{% url "index" %}" class="active">Home</a></li>
+                        <li><a href="{% url "login" %}">Login</a></li>
+                        <li><a href="{% url "registers" %}">registers</a></li>
+                        <li><a href="{% url "streams" %}">Streams</a></li>
+                        <li><a href="{% url "streams" %}">Profile <img src="assets/images/profile-header.jpg" alt=""></a></li>
                     </ul>   
                     <a class='menu-trigger'>
                         <span>Menu</span>
@@ -83,12 +83,11 @@ https://templatemo.com/tm-579-cyborg-gaming
     </div>
   </header>
   <!-- ***** Header Area End ***** -->
-
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
         <div class="page-content">
-
+          {% block content %}
           <!-- ***** Banner Start ***** -->
           <div class="main-banner">
             <div class="row">
@@ -270,6 +269,7 @@ https://templatemo.com/tm-579-cyborg-gaming
       </div>
     </div>
   </footer>
+  {% endblock content %}
   <!-- Scripts -->
   <!-- Bootstrap core JavaScript -->
   <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
@@ -280,7 +280,7 @@ https://templatemo.com/tm-579-cyborg-gaming
   <script src="{% static 'assets/js/tabs.js' %}"></script>
   <script src="{% static 'assets/js/popup.js' %}"></script>
   <script src="{% static 'assets/js/custom.js' %}"></script>
-
+  
 
   </body>
 
