@@ -1,7 +1,92 @@
-{% extends "index.html" %}
-<!---->
-{% block content %}
+{% extends "index.html" %} {% block content %} {% load static %}
 
-<h5>ทำตรงนี้</h5>
+<head>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    body {
+      font-family: "Kanit", sans-serif;
+      color: #ffffff; /* สีข้อความเป็นสีขาว */
+    }
+
+    .main-title,
+    .sidebar h2,
+    .sidebar p,
+    .admission-banner h1,
+    .admission-banner h2,
+    .admission-banner h3,
+    .contact-info p {
+      color: #ffffff; /* สีข้อความเป็นสีขาว */
+    }
+
+    .banner-text h2,
+    .banner-text p,
+    .banner-text h1,
+    .banner-text h3 {
+      color: #ffb606; /* สีข้อความภายใน banner เป็นสีขาว */
+    }
+
+    .admission-info .quota-box,
+    .admission-info .dates-box {
+      color: #ffffff; /* สีข้อความภายใน quota และ dates box เป็นสีขาว */
+    }
+  </style>
+</head>
+
+<div class="container">
+  <h1 class="main-title">ช่องทางการรับสมัคร สำหรับภาคปกติ</h1>
+
+  <div class="admission-content">
+    <div class="sidebar">
+      <div class="icon-box"></div>
+      <h2>ระบบรับสมัครนักศึกษา</h2>
+      <p>
+        การรับสมัครนักเรียน นักศึกษา เพื่อเข้าศึกษา
+        ต่อในมหาวิทยาลัยราชภัฏศรีสะเกษ ระดับปริญญาตรี ทั้งภาคปกติ ภาค กศ.บป.
+        (เสาร์ - อาทิตย์)
+      </p>
+    </div>
+
+    <div class="main-content">
+      <div class="admission-banner">
+        <div class="banner-text">
+          <h2>SSKRU</h2>
+          <a href="https://www.sskru.ac.th/student2568/" target="_blank"
+            >www.sskru.ac.th</a
+          >
+          <h1>เปิดรับสมัครนักศึกษา</h1>
+          <h3>ภาคปกติ ประจำปีการศึกษา 2568</h3>
+        </div>
+        <div class="admission-info">
+          <div class="quota-box">
+            <span class="label">ระดับปริญญาตรี ประเภทโควตา รับตรง</span>
+          </div>
+          <div class="dates-box">
+            <span class="label">สมัครออนไลน์</span>
+            <span class="date">19 มกราคม 2567 - 18 พฤษภาคม 2567</span>
+          </div>
+        </div>
+        <div class="contact-info">
+          <p>Phone: 045-643-622</p>
+          <span class="label">หรือติดต่อ</span>
+          <a href="https://www.facebook.com/OASS2021?locale=th_TH/" class="mx-3"
+            ><p class="fw-normal">
+              สำนักส่งเสริมวิชาการและงานทะเบียนจังหวัดศรีสะเกษ
+            </p></a
+          >
+        </div>
+        <div class="student-image">
+          <img
+            src="{% static 'assets/images/sskruregis.jpg' %}"
+            alt="Students"
+            class="students"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 {% endblock content %}
