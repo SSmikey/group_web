@@ -773,7 +773,7 @@ Banner Style
 */
 
 .main-banner {
-  background-image: url(../images/banner-bg.jpg);
+  background-image: url(/statics/assets/images/home-bg.png);
   background-position: center center;
   background-size: cover;
   min-height: 380px;
@@ -783,9 +783,13 @@ Banner Style
 
 .main-banner h6 {
   font-size: 20px;
-  color: #fff;
+  color: #000000;
   font-weight: 400;
   margin-bottom: 25px;
+}
+
+.main-banner h3 {
+  color: #000000;
 }
 
 .main-banner h4 {
