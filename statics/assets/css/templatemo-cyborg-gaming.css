@@ -335,7 +335,7 @@ Header Style
 */
 
 .background-header {
-  background-color: #fff !important;
+  background-color: #1f2122 !important;
   height: 70px!important;
   position: fixed!important;
   top: 0!important;
@@ -346,12 +346,12 @@ Header Style
   -moz-transition: all .5s ease 0s;
   -o-transition: all .5s ease 0s;
   transition: all .5s ease 0s;
-  display: none;
+  display: block;
 }
 
 .header-area {
   background-color: transparent;
-  position: absolute;
+  position: fixed!important;
   height: 70px;
   top: 15px;
   left: 0;
@@ -616,6 +616,8 @@ Header Style
 
 .header-area.header-sticky {
   min-height: 70px;
+  top: 0;
+  z-index: 1000;
 }
 
 .header-area.header-sticky .nav li a.active {
