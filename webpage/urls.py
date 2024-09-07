@@ -7,5 +7,6 @@ urlpatterns = [
     path("browse/", views.browsePage, name="browse"),
     path("details/", views.detailsPage, name="details"),
     path("profile/", views.profilePage, name="profile"),
-    path("streams/", views.streamsPage, name="streams")
+    path("streams/", views.streamsPage, name="streams"),
+    path("registers/", views.registersPage, name="registers")
 ]

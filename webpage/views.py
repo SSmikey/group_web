@@ -21,3 +21,6 @@ def profilePage(request):
 
 def streamsPage(request):
     return render(request, 'streams.html')
+
+def registersPage(request):
+    return render(request, 'registers.html')
