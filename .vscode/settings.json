@@ -42,5 +42,5 @@
         ]
     },
     "liveServer.settings.port": 5501,
-    "files.autoSave": "off"
+    "files.autoSave": "afterDelay"
 }
