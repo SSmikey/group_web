@@ -346,12 +346,12 @@ Header Style
   -moz-transition: all .5s ease 0s;
   -o-transition: all .5s ease 0s;
   transition: all .5s ease 0s;
-  display: block;
+  display: none;
 }
 
 .header-area {
   background-color: transparent;
-  position: fixed!important;
+  position: fixed;
   height: 70px;
   top: 15px;
   left: 0;
