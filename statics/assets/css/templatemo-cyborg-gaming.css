@@ -335,7 +335,7 @@ Header Style
 */
 
 .background-header {
-  background-color: #fff !important;
+  background-color: #1f2122 !important;
   height: 70px!important;
   position: fixed!important;
   top: 0!important;
@@ -351,7 +351,7 @@ Header Style
 
 .header-area {
   background-color: transparent;
-  position: absolute;
+  position: fixed;
   height: 70px;
   top: 15px;
   left: 0;
@@ -616,6 +616,8 @@ Header Style
 
 .header-area.header-sticky {
   min-height: 70px;
+  top: 0;
+  z-index: 1000;
 }
 
 .header-area.header-sticky .nav li a.active {
@@ -773,19 +775,35 @@ Banner Style
 */
 
 .main-banner {
-  background-image: url(../images/banner-bg.jpg);
+  /* background-image: url(/statics/assets/images/banner-bg.jpg);
   background-position: center center;
-  background-size: cover;
+  background-size: cover; */
+  position: relative;
   min-height: 380px;
   border-radius: 23px;
   padding: 80px 60px;
+  overflow: hidden;
+}
+
+.main-banner video {
+  position: absolute;
+  top: 0; /* เพิ่มบรรทัดนี้ */
+  left: 0; /* เพิ่มบรรทัดนี้ */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+   
 }
 
 .main-banner h6 {
   font-size: 20px;
-  color: #fff;
+  color: #000000;
   font-weight: 400;
   margin-bottom: 25px;
+}
+
+.main-banner h3 {
+  color: #000000;
 }
 
 .main-banner h4 {
@@ -817,6 +835,9 @@ Most Popular Style
   padding: 30px 15px;
   border-radius: 23px;
   margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 .most-popular .item .item {
@@ -828,6 +849,9 @@ Most Popular Style
 
 .most-popular .item img {
   border-radius: 23px;
+  width: 100%;
+  height: 200px; /* ปรับตามความเหมาะสม */
+  object-fit: cover;
 }
 
 .most-popular .item h4 {
@@ -835,12 +859,16 @@ Most Popular Style
   margin-top: 20px;
   margin-bottom: 0px;
   display: inline-block;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .most-popular .item span {
   color: #666;
   display: block;
-  margin-top: 7px;
+  margin-top: auto;
   font-weight: 400;
 }
 
@@ -865,7 +893,18 @@ Most Popular Style
 
 .most-popular .main-button {
   text-align: center;
-  margin-bottom: -53px;
+  margin-top: auto;
+}
+
+.most-popular .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.most-popular .col-lg-3,
+.most-popular .col-sm-6 {
+  display: flex;
+  margin-bottom: 30px;
 }
 
 /* 
