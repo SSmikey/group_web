@@ -7,13 +7,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <title>Computer science</title>
 
+    <link rel="icon" href="{% static "assets/images/CSlogo.png" %}" type="image/png">
+
     <!-- Bootstrap core CSS -->
     <link href="{% static "vendor/bootstrap/css/bootstrap.min.css" %}" rel="stylesheet">
-
 
     <!-- Additional CSS Files -->
     <link rel="stylesheet" href="{% static "assets/css/fontawesome.css" %}">
@@ -28,6 +29,11 @@ TemplateMo 579 Cyborg Gaming
 https://templatemo.com/tm-579-cyborg-gaming
 
 -->
+    <style>
+      body {
+          font-family: 'Kanit', sans-serif;
+     }
+    </style>
   </head>
 
 <body>
@@ -67,10 +73,9 @@ https://templatemo.com/tm-579-cyborg-gaming
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
                         <li><a href="{% url "index" %}" class="active">Home</a></li>
-                        <li><a href="{% url "browse" %}">Browse</a></li>
-                        <li><a href="{% url "details" %}">สมัคร</a></li>
+                        <li><a href="{% url "browse" %}">สมัคร</a></li>
                         <li><a href="{% url "streams" %}">เกี่ยวกับเรา</a></li>
-                        <li><a href="{% url "profile" %}">ติดต่อเรา<img src="{% static "assets/images/CSlogo.png" %}" alt=""></a></li>
+                        <li><a href="{% url "profile" %}">ติดต่อเรา <img src="{% static "assets/images/CSlogo.png" %}" alt=""></a></li>
                     </ul>   
                     <a class='menu-trigger'>
                         <span>Menu</span>
@@ -99,7 +104,7 @@ https://templatemo.com/tm-579-cyborg-gaming
                   <h6>Welcome To Cyborg</h6>
                   <h4><em>Browse</em> Our Popular Games Here</h4>
                   <div class="main-button">
-                    <a href="{% url "browse" %}">Browse Now</a>
+                    <a href="{% url "browse" %}">สนใจสมัคร</a>
                   </div>
                 </div>
               </div>
@@ -112,12 +117,12 @@ https://templatemo.com/tm-579-cyborg-gaming
             <div class="row">
               <div class="col-lg-12">
                 <div class="heading-section">
-                  <h4><em>Interesting activities of</em> computer science</h4>
+                  <h4><em>กิจกรรมที่น่าสนใจ</em> computer science</h4>
                 </div>
                 <div class="row">
                   <div class="col-lg-3 col-sm-6">
                     <div class="item">
-                      <img src="https://scontent.fnak1-1.fna.fbcdn.net/v/t39.30808-6/450054923_863881429118803_2906487664665253319_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=cc71e4&_nc_eui2=AeGmatFf3gi89JHGpz-PMfTcqsedekKzGdyqx516QrMZ3KtLF4cpPaEsMFTVCY5BmX4rxhkkP1NQjDVK-BP1nUJE&_nc_ohc=hir-9UVeg2IQ7kNvgH0O9UW&_nc_ht=scontent.fnak1-1.fna&cb_e2o_trans=q&_nc_gid=A1IZ5LEnkccLu44PN-AzDo7&oh=00_AYDkSVTmcNvtnjgDv3w5whDS1hejAdHVarv4HOZ7SBg0iw&oe=66DE02C8" alt="">
+                      <img src="https://scontent-bkk1-1.xx.fbcdn.net/v/t39.30808-6/450055683_863892982450981_151007795583764724_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_ohc=l-Rzrr8qD0YQ7kNvgHJ0xg4&_nc_ht=scontent-bkk1-1.xx&oh=00_AYCDVJ1Ae8Saf9ZzRoVwKPerRod9SdyoBDoEB_tFeohA9g&oe=66E48EA1" alt="">
                       <div class="item-content">
                       <h4>Sisaket Robotics Competition<br><span>สาขาวิทยาการคอมพิวเตอร์ ร่วมดำเนินการจัดการแข่งขัน Sisaket Robotics
                         Competition ครั้งที่ 2 ประจำปี 2567</span></h4>
@@ -219,7 +224,7 @@ https://templatemo.com/tm-579-cyborg-gaming
                   </div>
                   <div class="col-lg-12">
                     <div class="main-button">
-                      <a href="browse.html">Discover Popular</a>
+                      <a href="{% url "browse" %}">หน้าถัดไป </a>
                     </div>
                   </div>
                 </div>
@@ -228,50 +233,6 @@ https://templatemo.com/tm-579-cyborg-gaming
           </div>
           <!-- ***** Most Popular End ***** -->
 
-          <!-- ***** Gaming Library Start ***** -->
-          {% comment %} <div class="gaming-library">
-            <div class="col-lg-12">
-              <div class="heading-section">
-                <h4><em>Your Gaming</em> Library</h4>
-              </div>
-              <div class="item">
-                <ul>
-                  <li><img src="{% static "assets/images/game-01.jpg" %}" alt="" class="templatemo-item"></li>
-                  <li><h4>Dota 2</h4><span>Sandbox</span></li>
-                  <li><h4>Date Added</h4><span>24/08/2036</span></li>
-                  <li><h4>Hours Played</h4><span>634 H 22 Mins</span></li>
-                  <li><h4>Currently</h4><span>Downloaded</span></li>
-                  <li><div class="main-border-button border-no-active"><a href="#">Donwloaded</a></div></li>
-                </ul>
-              </div>
-              <div class="item">
-                <ul>
-                  <li><img src="{% static "assets/images/game-02.jpg" %}" alt="" class="templatemo-item"></li>
-                  <li><h4>Fortnite</h4><span>Sandbox</span></li>
-                  <li><h4>Date Added</h4><span>22/06/2036</span></li>
-                  <li><h4>Hours Played</h4><span>740 H 52 Mins</span></li>
-                  <li><h4>Currently</h4><span>Downloaded</span></li>
-                  <li><div class="main-border-button"><a href="#">Donwload</a></div></li>
-                </ul>
-              </div>
-              <div class="item last-item">
-                <ul>
-                  <li><img src="{% static "assets/images/game-03.jpg" %}" alt="" class="templatemo-item"></li>
-                  <li><h4>CS-GO</h4><span>Sandbox</span></li>
-                  <li><h4>Date Added</h4><span>21/04/2036</span></li>
-                  <li><h4>Hours Played</h4><span>892 H 14 Mins</span></li>
-                  <li><h4>Currently</h4><span>Downloaded</span></li>
-                  <li><div class="main-border-button border-no-active"><a href="#">Donwloaded</a></div></li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-lg-12">
-              <div class="main-button">
-                <a href="profile.html">View Your Library</a>
-              </div>
-            </div>
-          </div> {% endcomment %}
-          <!-- ***** Gaming Library End ***** -->
         </div>
       </div>
     </div>
@@ -281,14 +242,13 @@ https://templatemo.com/tm-579-cyborg-gaming
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <p>Copyright © 2024 <a href="#">computer science</a> All rights reserved. 
+          <p>เว็บนี้ทำขึ้นเพื่อโปรโมทสาขาวิทยาการคอมพิวเตอร์และถ้าใครสนใจเข้าเรียนในสาขาของเรา <a href="https://www.oass.sskru.ac.th/std.sskru/s1.html">สามารถกดสมัครที่ตรงนี้ได้เลย</a> 
           
-          <br>Design: <a href="https://templatemo.com" target="_blank" title="free CSS templates">TemplateMo</a>  Distributed By <a href="https://themewagon.com" target="_blank" >ThemeWagon</a></p>
+          <br>และสามารถติดตามข่าวสารของสาขาวิทยาการคอมพิวเตอร์ได้ที่: <a href="https://www.facebook.com/comsci.sskru" target="_blank" title="free CSS templates">Facebook</a> ได้นะครับ</p>
         </div>
       </div>
     </div>
   </footer>
-
 
   <!-- Scripts -->
   <!-- Bootstrap core JavaScript -->
@@ -300,7 +260,6 @@ https://templatemo.com/tm-579-cyborg-gaming
   <script src="{% static "assets/js/tabs.js" %}"></script>
   <script src="{% static "assets/js/popup.js" %}"></script>
   <script src="{% static "assets/js/custom.js" %}"></script>
-
 
   </body>
 
