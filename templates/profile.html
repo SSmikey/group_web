@@ -2,25 +2,32 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- ลิงก์ฟ้อนต์ Kanit จาก Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <title>Cyborg - Awesome HTML5 Template</title>
 
-    <title>Cyborg - Awesome HTML5 Template</title>
+  <!-- Bootstrap core CSS -->
+  <link href="{% static "vendor/bootstrap/css/bootstrap.min.css" %}" rel="stylesheet">
 
-    <!-- Bootstrap core CSS -->
-    <link href="{% static "vendor/bootstrap/css/bootstrap.min.css" %}" rel="stylesheet">
+  <!-- Additional CSS Files -->
+  <link rel="stylesheet" href="{% static "assets/css/fontawesome.css" %}">
+  <link rel="stylesheet" href="{% static "assets/css/templatemo-cyborg-gaming.css" %}">
+  <link rel="stylesheet" href="{% static "assets/css/owl.css" %}">
+  <link rel="stylesheet" href="{% static "assets/css/animate.css" %}">
+  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
 
-
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="{% static "assets/css/fontawesome.css" %}">
-    <link rel="stylesheet" href="{% static "assets/css/templatemo-cyborg-gaming.css" %}">
-    <link rel="stylesheet" href="{% static "assets/css/owl.css" %}">
-    <link rel="stylesheet" href="{% static "assets/css/animate.css" %}">
-    <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+  <!-- เปลี่ยนฟ้อนต์เป็น Kanit -->
+  <style>
+      body {
+          font-family: 'Kanit', sans-serif;
+      }
+  </style>
+</head>
 <!--
 
 TemplateMo 579 Cyborg Gaming
@@ -70,7 +77,7 @@ https://templatemo.com/tm-579-cyborg-gaming
                         <li><a href="{% url "browse" %}">Browse</a></li>
                         <li><a href="{% url "details" %}">Details</a></li>
                         <li><a href="{% url "streams" %}">Streams</a></li>
-                        <li><a href="{% url "profile" %}" class="active">Profile <img src="{% static "assets/images/profile-header.jpg" %}" alt=""></a></li>
+                        <li><a href="{% url "profile" %}" class="active">ติดต่อเรา <img src="{% static "assets/images/CSlogo.png" %}" alt=""></a></li>
                     </ul>   
                     <a class='menu-trigger'>
                         <span>Menu</span>
@@ -94,25 +101,22 @@ https://templatemo.com/tm-579-cyborg-gaming
               <div class="main-profile ">
                 <div class="row">
                   <div class="col-lg-4">
-                    <img src="{% static "assets/images/profile.jpg" %}" alt="" style="border-radius: 23px;">
+                    <img src="{% static "assets/images/CSlogo.png" %}" alt="" style="border-radius: 23px;">
                   </div>
                   <div class="col-lg-4 align-self-center">
-                    <div class="main-info header-text">
-                      <span>Offline</span>
-                      <h4>Alan Smithee</h4>
-                      <p>You Haven't Gone Live yet. Go Live By Touching The Button Below.</p>
-                      <div class="main-border-button">
-                        <a href="#">Start Live Stream</a>
-                      </div>
+                    <div class="main-info header-text"> 
+                      <h4>วิทยาการคอมพิวเตอร์ มหาวิทยาลัยราชภัฏศรีสะเกษ</h4>
+                      <p style="color: white;"> มรภ.ศรีสะเกษ 319 ถนนไทยพันทา ต.โพธิ์ อ.เมือง จ.ศรีสะเกษ 33000</p>
+                      <p style="color: white;"><strong>โทรศัพท์</strong>  043-009700 ต่อ 50528</p> 
+                      <p style="color: white;"><strong>Email</strong>  webmaster@sskru.ac.th, phisan.s@sskru.ac.th</p> 
+                      <p style="color: white;"><strong>Hot line</strong>  084-298-2456</p> 
+                      <p>&nbsp;</p>
+                      <p style="color: white; font-size: 20px;"><strong>
+                        ผู้ช่วยศาสตราจารย์พิศาล สุขขี<br>
+                        อาจารย์ประจำสาขาวิชาวิทยาการคอมพิวเตอร์<br>
+                        คณะศิลปศาสตร์และวิทยาศาสตร์ มหาวิทยาลัยราชภัฏศรีสะเกษ<br>
+                    </strong> โทร  084-298-2456</p>
                     </div>
-                  </div>
-                  <div class="col-lg-4 align-self-center">
-                    <ul>
-                      <li>Games Downloaded <span>3</span></li>
-                      <li>Friends Online <span>16</span></li>
-                      <li>Live Streams <span>None</span></li>
-                      <li>Clips <span>29</span></li>
-                    </ul>
                   </div>
                 </div>
                 <div class="row">
@@ -121,60 +125,37 @@ https://templatemo.com/tm-579-cyborg-gaming
                       <div class="row">
                         <div class="col-lg-12">
                           <div class="heading-section">
-                            <h4><em>Your Most Popular</em> Clips</h4>
+                            <h4><em>สอบถามเพิ่มเติม</em>  ช่องทางติดต่ออื่นๆ</h4>
                           </div>
                         </div>
                         <div class="col-lg-3 col-sm-6">
                           <div class="item">
                             <div class="thumb">
-                              <img src="{% static "assets/images/clip-01.jpg" %}" alt="" style="border-radius: 23px;">
-                              <a href="https://www.youtube.com/watch?v=r1b03uKWk_M" target="_blank"><i class="fa fa-play"></i></a>
+                              <img src="{% static "assets/images/linecsqr.png" %}" alt="" style="border-radius: 23px;">
                             </div>
                             <div class="down-content">
-                              <h4>First Clip</h4>
-                              <span><i class="fa fa-eye"></i> 250</span>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-lg-3 col-sm-6">
-                          <div class="item">
-                            <div class="thumb">
-                              <img src="{% static "assets/images/clip-02.jpg" %}" alt="" style="border-radius: 23px;">
-                              <a href="https://www.youtube.com/watch?v=r1b03uKWk_M" target="_blank"><i class="fa fa-play"></i></a>
-                            </div>
-                            <div class="down-content">
-                              <h4>Second Clip</h4>
-                              <span><i class="fa fa-eye"></i> 183</span>
+                              <h4 class="fs-3 fw-bold custom-font">สแกนผ่าน <span style=" font-size: 120%;">LINE</span></h4>
                             </div>
                           </div>
                         </div>
                         <div class="col-lg-3 col-sm-6">
                           <div class="item">
                             <div class="thumb">
-                              <img src="{% static "assets/images/clip-03.jpg" %}" alt="" style="border-radius: 23px;">
-                              <a href="https://www.youtube.com/watch?v=r1b03uKWk_M" target="_blank"><i class="fa fa-play"></i></a>
+                              <img src="{% static "assets/images/facebookqr.png" %}" alt="" style="border-radius: 23px;">
                             </div>
                             <div class="down-content">
-                              <h4>Third Clip</h4>
-                              <span><i class="fa fa-eye"></i> 141</span>
+                              <h4 class="fs-3 fw-bold custom-font">สแกนผ่าน <span style=" font-size: 120%;">FACEBOOK</span></h4>
                             </div>
                           </div>
                         </div>
                         <div class="col-lg-3 col-sm-6">
                           <div class="item">
                             <div class="thumb">
-                              <img src="{% static "assets/images/clip-04.jpg" %}" alt="" style="border-radius: 23px;">
-                              <a href="https://www.youtube.com/watch?v=r1b03uKWk_M" target="_blank"><i class="fa fa-play"></i></a>
+                              <img src="{% static "assets/images/tiktokqr.png" %}" alt="" style="border-radius: 23px;">
                             </div>
                             <div class="down-content">
-                              <h4>Fourth Clip</h4>
-                              <span><i class="fa fa-eye"></i> 91</span>
+                              <h4 class="fs-3 fw-bold custom-font">TIKTOK <span style=" font-size: 120%;">สาขา</span></h4>
                             </div>
-                          </div>
-                        </div>
-                        <div class="col-lg-12">
-                          <div class="main-button">
-                            <a href="#">Load More Clips</a>
                           </div>
                         </div>
                       </div>
@@ -190,36 +171,24 @@ https://templatemo.com/tm-579-cyborg-gaming
           <div class="gaming-library profile-library">
             <div class="col-lg-12">
               <div class="heading-section">
-                <h4><em>Your Gaming</em> Library</h4>
+                <h4><em>ช่องทางติดต่อ</em> เพิ่มเติม</h4>
               </div>
               <div class="item">
                 <ul>
-                  <li><img src="{% static "assets/images/game-01.jpg" %}" alt="" class="templatemo-item"></li>
-                  <li><h4>Dota 2</h4><span>Sandbox</span></li>
-                  <li><h4>Date Added</h4><span>24/08/2036</span></li>
-                  <li><h4>Hours Played</h4><span>634 H 22 Mins</span></li>
-                  <li><h4>Currently</h4><span>Downloaded</span></li>
-                  <li><div class="main-border-button border-no-active"><a href="#">Donwloaded</a></div></li>
+                  <li><img src="{% static "assets/images/F.png" %}" alt="" class="templatemo-item"></li>
+                  <h4><a href="https://www.facebook.com/comsci.sskru?locale=th_TH" style="text-decoration: none; color: inherit;">วิทยาการคอมพิวเตอร์ มหาวิทยาลัยราชภัฏศรีสะเกษ</a></h4>
                 </ul>
               </div>
               <div class="item">
                 <ul>
-                  <li><img src="{% static "assets/images/game-02.jpg" %}" alt="" class="templatemo-item"></li>
-                  <li><h4>Fortnite</h4><span>Sandbox</span></li>
-                  <li><h4>Date Added</h4><span>22/06/2036</span></li>
-                  <li><h4>Hours Played</h4><span>745 H 22 Mins</span></li>
-                  <li><h4>Currently</h4><span>Downloaded</span></li>
-                  <li><div class="main-border-button border-no-active"><a href="#">Donwloaded</a></div></li>
+                  <li><img src="{% static "assets/images/YT.png" %}" alt="" class="templatemo-item"></li>
+                    <h4><a href="https://www.youtube.com/@PhisanSookkheeSSKRU" style="text-decoration: none; color: inherit;">Phisan        Sookkhee</a></h4>                
                 </ul>
               </div>
               <div class="item last-item">
                 <ul>
-                  <li><img src="{% static "assets/images/game-03.jpg" %}" alt="" class="templatemo-item"></li>
-                  <li><h4>CS-GO</h4><span>Sandbox</span></li>
-                  <li><h4>Date Added</h4><span>21/04/2022</span></li>
-                  <li><h4>Hours Played</h4><span>632 H 46 Mins</span></li>
-                  <li><h4>Currently</h4><span>Downloaded</span></li>
-                  <li><div class="main-border-button border-no-active"><a href="#">Donwloaded</a></div></li>
+                  <li><img src="{% static "assets/images/tiktok.png" %}" alt="" class="templatemo-item"></li>
+                  <h4><a href="https://www.tiktok.com/@comsciencesskru" style="text-decoration: none; color: inherit;">สาขาวิทยาการคอมพิวเตอร์</a></h4>
                 </ul>
               </div>
             </div>
