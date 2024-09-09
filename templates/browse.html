@@ -1,0 +1,196 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <title>Computer science</title>
+
+    <link rel="icon" href="{% static "assets/images/CSlogo.png" %}" type="image/png">
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static "vendor/bootstrap/css/bootstrap.min.css" %}" rel="stylesheet">
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{% static "assets/css/fontawesome.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/templatemo-cyborg-gaming.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/owl.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/animate.css" %}">
+    <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+<!--
+
+TemplateMo 579 Cyborg Gaming
+
+https://templatemo.com/tm-579-cyborg-gaming
+
+-->
+  </head>
+
+<body>
+
+  <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- ***** Logo Start ***** -->
+                    <a href="{% url "index" %}" class="logo">
+                        <img src="{% static "assets/images/logo-04.png" %}" alt="">
+                    </a>
+                    <!-- ***** Logo End ***** -->
+                    <!-- ***** Search End ***** -->
+                    <div class="search-input">
+                      <form id="search" action="#">
+                        <input type="text" placeholder="Type Something" id='searchText' name="searchKeyword" onkeypress="handle" />
+                        <i class="fa fa-search"></i>
+                      </form>
+                    </div>
+                    <!-- ***** Search End ***** -->
+                    <!-- ***** Menu Start ***** -->
+                    <ul class="nav">
+                      <li><a href="{% url "index" %}">Home</a></li>
+                      <li><a href="{% url "browse" %}" class="active">สมัคร</a></li>
+                      <li><a href="{% url "streams" %}">เกี่ยวกับเรา</a></li>
+                      <li><a href="{% url "profile" %}">ติดต่อเรา <img src="{% static "assets/images/CSlogo.png" %}" alt=""></a></li>
+                  </ul>    
+                    <a class='menu-trigger'>
+                        <span>Menu</span>
+                    </a>
+                    <!-- ***** Menu End ***** -->
+                </nav>
+            </div>
+        </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="page-content">
+
+          <!-- ***** Featured Start ***** -->
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="feature-banner header-text">
+                <div class="row">
+                  <div class="col-lg-12">
+                    <div class="thumb">
+                      <img src="{% static "assets/images/bg-cs-dt-01.png" %}" alt="" style="border-radius: 23px;">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ***** Featured End ***** -->
+
+          <!-- ***** Details Start ***** -->
+          <div class="game-details">
+            <div class="row">
+              <div class="col-lg-12">
+                <h2>เปิดรับสมัครนักศึกษา ในระดับปริญญาตรี</h2>
+              </div>
+              <div class="col-lg-12">
+                <div class="content">
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <div class="item">
+                        <div class="item-content">
+                          <h3>#คุณสมบัติผู้สมัคร</h3>
+                          <h4>มัธยมศึกษาตอนปลาย<br></h4>
+                          <h4>ปวช. ปวส.<br></h4>
+                          <h4>ปริญญาตรีทุกสาขา</h4>
+                        </div>
+                      </div>
+                    </div>                    
+                    <div class="col-lg-4">
+                      <img src="assets/images/details-01.jpg" alt="" style="border-radius: 23px; margin-bottom: 30px;">
+                    </div>
+                    <div class="col-lg-4">
+                      <img src="assets/images/details-02.jpg" alt="" style="border-radius: 23px; margin-bottom: 30px;">
+                    </div>
+                    <div class="col-lg-4">
+                      <img src="assets/images/details-03.jpg" alt="" style="border-radius: 23px; margin-bottom: 30px;">
+                    </div>
+                    <div class="col-lg-12">
+                      <p>📣✨ ขอเชิญชวนทุกท่านเข้าร่วมกับเรา! ✨📣<br>
+                        หากคุณมีความฝันที่จะสร้างสรรค์นวัตกรรมใหม่ ๆ และชอบท้าทายตัวเองกับเทคโนโลยีที่ก้าวไกล ✨ สาขาวิทยาการคอมพิวเตอร์ คือคำตอบสำหรับคุณ!<br>                        
+                        🔍 สิ่งที่คุณจะได้พบในสาขานี้:<br>                        
+                        การเรียนรู้และพัฒนาโปรแกรมคอมพิวเตอร์อย่างสร้างสรรค์<br>
+                        เข้าใจการออกแบบระบบคอมพิวเตอร์และโครงสร้างข้อมูลอย่างลึกซึ้ง<br>
+                        ทักษะที่จำเป็นในโลกยุคดิจิทัล เช่น ปัญญาประดิษฐ์, การประมวลผลข้อมูลขนาดใหญ่ และอื่น ๆ<br>
+                        📈 โอกาสการทำงานที่รออยู่:<br>      
+                        นักพัฒนาซอฟต์แวร์ 💻<br>
+                        นักวิเคราะห์ข้อมูล 📊<br>
+                        นักวิจัยด้านเทคโนโลยี 💡<br>
+                        และอีกมากมาย!<br>
+                        มาร่วมเป็นส่วนหนึ่งของการขับเคลื่อนเทคโนโลยีในอนาคต สมัครเข้าศึกษาใน สาขาวิทยาการคอมพิวเตอร์ กับเราวันนี้!</p>
+                    </div>
+                    <div class="col-lg-12">
+                      <div class="main-border-button">
+                        <a href="https://www.oass.sskru.ac.th/std.sskru/s1.html">สนใจสมัครเรียน</a>
+                      </div>
+                    </div>
+                    <div class="col-lg-12 d-flex justify-content-center">
+                      <div class="main-button">
+                        <a href="{% url "streams" %}">หน้าถัดไป </a>
+                      </div>
+                    </div>
+                  </div>                  
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ***** Details End ***** -->
+
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <p>เว็บนี้ทำขึ้นเพื่อโปรโมทสาขาวิทยาการคอมพิวเตอร์และถ้าใครสนใจเข้าเรียนในสาขาของเรา <a href="https://www.oass.sskru.ac.th/std.sskru/s1.html">สามารถกดสมัครที่ตรงนี้ได้เลย</a> 
+          
+          <br>และสามารถติดตามข่าวสารของสาขาวิทยาการคอมพิวเตอร์ได้ที่: <a href="https://www.facebook.com/comsci.sskru" target="_blank" title="free CSS templates">Facebook</a> ได้นะครับ</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+  <script src="{% static "vendor/jquery/jquery.min.js" %}"></script>
+  <script src="{% static "vendor/bootstrap/js/bootstrap.min.js" %}"></script>
+
+  <script src="{% static "assets/js/isotope.min.js" %}"></script>
+  <script src="{% static "assets/js/owl-carousel.js" %}"></script>
+  <script src="{% static "assets/js/tabs.js" %}"></script>
+  <script src="{% static "assets/js/popup.js" %}"></script>
+  <script src="{% static "assets/js/custom.js" %}"></script>
+
+  </body>
+
+</html>

@@ -1,92 +1,829 @@
-{% extends "index.html" %} {% block content %} {% load static %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
 
-<head>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap"
-    rel="stylesheet"
-  />
-  <style>
-    body {
-      font-family: "Kanit", sans-serif;
-      color: #ffffff; /* สีข้อความเป็นสีขาว */
-    }
+  <head>
 
-    .main-title,
-    .sidebar h2,
-    .sidebar p,
-    .admission-banner h1,
-    .admission-banner h2,
-    .admission-banner h3,
-    .contact-info p {
-      color: #ffffff; /* สีข้อความเป็นสีขาว */
-    }
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    .banner-text h2,
-    .banner-text p,
-    .banner-text h1,
-    .banner-text h3 {
-      color: #ffb606; /* สีข้อความภายใน banner เป็นสีขาว */
-    }
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    .admission-info .quota-box,
-    .admission-info .dates-box {
-      color: #ffffff; /* สีข้อความภายใน quota และ dates box เป็นสีขาว */
-    }
-  </style>
-</head>
+    <title>Computer science</title>
 
-<div class="container">
-  <h1 class="main-title">ช่องทางการรับสมัคร สำหรับภาคปกติ</h1>
+    <link rel="icon" href="{% static "assets/images/CSlogo.png" %}" type="image/png">
 
-  <div class="admission-content">
-    <div class="sidebar">
-      <div class="icon-box"></div>
-      <h2>ระบบรับสมัครนักศึกษา</h2>
-      <p>
-        การรับสมัครนักเรียน นักศึกษา เพื่อเข้าศึกษา
-        ต่อในมหาวิทยาลัยราชภัฏศรีสะเกษ ระดับปริญญาตรี ทั้งภาคปกติ ภาค กศ.บป.
-        (เสาร์ - อาทิตย์)
-      </p>
+    <!-- Bootstrap core CSS -->
+    <link href="{% static "vendor/bootstrap/css/bootstrap.min.css" %}" rel="stylesheet">
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{% static "assets/css/fontawesome.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/templatemo-cyborg-gaming.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/owl.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/animate.css" %}">
+    <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+
+    <style>
+      body {
+          font-family: 'Kanit', sans-serif;
+     }
+    </style>
+<!-- 
+
+TemplateMo 579 Cyborg Gaming
+
+https://templatemo.com/tm-579-cyborg-gaming
+
+-->
+
+  </head>
+
+<body>
+
+  <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
 
-    <div class="main-content">
-      <div class="admission-banner">
-        <div class="banner-text">
-          <h2>SSKRU</h2>
-          <a href="https://www.sskru.ac.th/student2568/" target="_blank"
-            >www.sskru.ac.th</a
-          >
-          <h1>เปิดรับสมัครนักศึกษา</h1>
-          <h3>ภาคปกติ ประจำปีการศึกษา 2568</h3>
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- ***** Logo Start ***** -->
+                    <a href="{% url "index" %}" class="logo">
+                        <img src="{% static "assets/images/logo-04.png" %}" alt="">
+                    </a>
+                    <!-- ***** Logo End ***** -->
+                    <!-- ***** Search End ***** -->
+                    <div class="search-input">
+                      <form id="search" action="#">
+                        <input type="text" placeholder="Type Something" id='searchText' name="searchKeyword" onkeypress="handle" />
+                        <i class="fa fa-search"></i>
+                      </form>
+                    </div>
+                    <!-- ***** Search End ***** -->
+                    <!-- ***** Menu Start ***** -->
+                    <ul class="nav">
+                        <li><a href="{% url "index" %}">Home</a></li>
+                        <li><a href="{% url "browse" %}">สมัคร</a></li>
+                        <li><a href="{% url "streams" %}" class="active">เกี่ยวกับเรา</a></li>
+                        <li><a href="{% url "profile" %}">ติดต่อเรา <img src="{% static "assets/images/CSlogo.png" %}" alt=""></a></li>
+                    </ul>   
+                    <a class='menu-trigger'>
+                        <span>Menu</span>
+                    </a>
+                    <!-- ***** Menu End ***** -->
+                </nav>
+            </div>
         </div>
-        <div class="admission-info">
-          <div class="quota-box">
-            <span class="label">ระดับปริญญาตรี ประเภทโควตา รับตรง</span>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="page-content">
+
+          <!-- ***** Featured Games Start ***** -->
+          <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="featured-games header-text">
+                    <div class="heading-section">
+                        <h4><em>ผลงานการเข้า</em> ประกวด</h4>
+                    </div>
+                    <div class="owl-features owl-carousel">
+                  <div class="item">
+                    <div class="thumb">
+                      <img src="{% static "assets/images/f1.jpg" %}" alt="">
+                    </div>                   
+                  </div>
+                  <div class="item">
+                    <div class="thumb">
+                      <img src="{% static "assets/images/g6.jpg"%}" alt="">
+                    </div>
+                  </div>
+                  <div class="item">
+                    <div class="thumb">
+                      <img src="{% static "assets/images/l6.jpg"%}" alt="">
+                    </div>
+                  </div>
+                  <div class="item">
+                    <div class="thumb">
+                      <img src="{% static "assets/images/f1.jpg"%}" alt="">
+                    </div>
+                  </div>
+                  <div class="item">
+                    <div class="thumb">
+                      <img src="{% static "assets/images/g6.jpg"%}" alt="">
+                    </div>
+                  </div>
+                  <div class="item">
+                    <div class="thumb">
+                      <img src="{% static "assets/images/l6.jpg"%}" alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="dates-box">
-            <span class="label">สมัครออนไลน์</span>
-            <span class="date">19 มกราคม 2567 - 18 พฤษภาคม 2567</span>
+          <!-- ***** Featured Games End ***** -->
+
+          <!-- ***** Live Stream Start ***** -->
+          <div class="live-stream">
+            <div class="col-lg-12">
+              <div class="heading-section">
+                <h4><em></em> เราจะได้เรียนอะไรบ้าง ?</h4>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-3 col-sm-6">
+                <div class="item">
+                  <div class="thumb">
+                    <img src="{% static "assets/images/Computer Networks.jpg"%}" alt="">
+                    <div class="hover-effect">
+                      <div class="content">
+                        <div class="live">
+                          <a >เรียนรู้เกี่ยวกับการออกแบบ ติดตั้ง
+                            และบำรุงรักษาระบบเครือข่ายคอมพิวเตอร์
+                            และช่วยให้นักศึกษาเข้าใจหลักการทำงานของเครือข่ายคอมพิวเตอร์
+                            ซึ่งเป็นพื้นฐานสำคัญในการออกแบบ ติดตั้ง
+                            และดูแลระบบเครือข่ายในองค์กรหรือการทำงานในอุตสาหกรรมที่เกี่ยวข้องกับเทคโนโลยีสารสนเทศ</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="down-content">
+                    <h5 class="card-title"> 
+                      โครงข่ายคอมพิวเตอร์ (Computer Networks)
+                    </h5>
+                  </div> 
+                </div>
+              </div>
+              <div class="col-lg-3 col-sm-6">
+                <div class="item">
+                  <div class="thumb">
+                    <img src="{% static "assets/images/Software Engineering.jpg"%}" alt="">
+                    <div class="hover-effect">
+                      <div class="content">
+                        <div class="live">
+                          <a >เรียนรู้เกี่ยวกับกระบวนการสร้างซอฟต์แวร์
+                            การวิเคราะห์และออกแบบระบบซอฟต์แวร์ การทดสอบและการบำรุงรักษาระบบ
+                            และช่วยให้นักศึกษามีความรู้และทักษะที่จำเป็นในการพัฒนาและจัดการซอฟต์แวร์ที่มีคุณภาพ
+                            ทำงานเป็นทีมอย่างมีประสิทธิภาพ
+                            และสามารถนำความรู้ไปประยุกต์ใช้ในอุตสาหกรรมซอฟต์แวร์ได้อย่างมืออาชีพ</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="down-content">
+                    <h5 class="card-title">
+                      การสร้างซอฟต์แวร์ (Software Engineering)
+                    </h5>
+                  </div> 
+                </div>
+              </div>
+              <div class="col-lg-3 col-sm-6">
+                <div class="item">
+                  <div class="thumb">
+                    <img src="{% static "assets/images/Geographic Information System.jpg"%}" alt="">
+                    <div class="hover-effect">
+                      <div class="content">
+                        <div class="live">
+                          <a >เรียนรู้เกี่ยวกับการประยุกต์ใช้เทคโนโลยีสารสนเทศในการวิเคราะห์และแสดงผลข้อมูลทางภูมิศาสตร์
+                            และช่วยให้นักศึกษามีทักษะในการจัดการและวิเคราะห์ข้อมูลเชิงพื้นที่
+                            ซึ่งมีความสำคัญในหลากหลายสาขาวิชาชีพ เช่น การวางแผนเมือง
+                            การจัดการสิ่งแวดล้อม
+                            นอกจากนี้ยังช่วยในการทำความเข้าใจและตัดสินใจที่เกี่ยวข้องกับพื้นที่และตำแหน่งต่าง
+                            ๆ ได้อย่างแม่นยำและมีประสิทธิภาพมากขึ้น</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="down-content">
+                    <h5 class="card-title">
+                      ภูมิสารสนเทศ (Geographic Information System)
+                    </h5>
+                  </div> 
+                </div>
+              </div>
+              <div class="col-lg-3 col-sm-6">
+                <div class="item">
+                  <div class="thumb">
+                    <img src="{% static "assets/images/Artificial Intelligence.jpg"%}" alt="">
+                    <div class="hover-effect">
+                      <div class="content">
+                        <div class="live">
+                          <a >เรียนรู้เกี่ยวกับการพัฒนาโปรแกรมและเทคโนโลยีที่ใช้ในการจำลองความเป็นมนุษย์ของระบบคอมพิวเตอร์
+                            และช่วยให้นักศึกษามีความเข้าใจในเทคโนโลยีที่กำลังเปลี่ยนแปลงโลกอย่างรวดเร็ว
+                            สามารถนำความรู้ไปพัฒนาและปรับใช้ในสาขาวิชาต่าง ๆ
+                            ได้อย่างสร้างสรรค์และมีประสิทธิภาพ
+                            รวมถึงเตรียมตัวให้พร้อมสำหรับอนาคตที่ AI
+                            จะเข้ามามีบทบาทมากขึ้นในชีวิตประจำวัน</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="down-content">
+                    <div class="avatar">
+                    </div>
+                    <h5 class="card-title" >
+                      ภูมิปัญญาประดิษฐ์ (Artificial Intelligence)
+                    </h5>
+                  </div> 
+                </div>
+              </div>
+              <div class="col-lg-3 col-sm-6">
+                <div class="item">
+                  <div class="thumb">
+                    <img src="{% static "assets/images/Data Science.jpg"%}" alt="">
+                    <div class="hover-effect">
+                      <div class="content">
+                        <div class="live">
+                          <a > เรียนรู้เกี่ยวกับการทำงานกับข้อมูล การวิเคราะห์และแสดงผลข้อมูล
+                            และการประยุกต์ใช้เทคโนโลยีสารสนเทศในการดำเนินงาน
+                            และเนื่องจากข้อมูลเป็นทรัพยากรที่มีค่าที่สุดสำหรับองค์กรและธุรกิจต่าง
+                            ๆ
+                            การเรียนรู้วิทยาการข้อมูลช่วยให้คุณมีทักษะในการวิเคราะห์และตีความข้อมูลเพื่อสนับสนุนการตัดสินใจและการแก้ปัญหาอย่างมีประสิทธิภาพ</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="down-content">
+                    <div class="avatar">
+                    </div>
+                    <h5 class="card-title">
+                      วิทยาการข้อมูล (Data Science)
+                    </h5>
+                  </div> 
+                </div>
+              </div>
+              <div class="col-lg-3 col-sm-6">
+                <div class="item">
+                  <div class="thumb">
+                    <img src="{% static "assets/images/Information Security.jpg"%}" alt="">
+                    <div class="hover-effect">
+                      <div class="content">
+                        <div class="live">
+                          <a >เรียนรู้เกี่ยวกับการป้องกันและควบคุมความปลอดภัยของข้อมูลในระบบคอมพิวเตอร์
+                            และช่วยให้นักศึกษาเข้าใจถึงความสำคัญของการรักษาความปลอดภัยในยุคดิจิทัลที่ข้อมูลเป็นทรัพยากรที่มีค่ามากขึ้น
+                            เตรียมความพร้อมในการปกป้องข้อมูลและระบบจากภัยคุกคามต่าง ๆ
+                            ที่เกิดขึ้นอย่างต่อเนื่อง รวมถึงพัฒนาทักษะในการวิเคราะห์ ป้องกัน
+                            และตอบสนองต่อเหตุการณ์ด้านความปลอดภัยอย่างมีประสิทธิภาพ</a>
+                        </div>
+                        
+                      </div>
+                    </div>
+                  </div>
+                  <div class="down-content">
+                    <div class="avatar"> 
+                    </div>
+                    <h5 class="card-title">
+                      ความปลอดภัยของข้อมูล (Information Security)
+                    </h5>
+                  </div> 
+                </div>
+              </div>
+              <div class="col-lg-3 col-sm-6">
+                <div class="item">
+                  <div class="thumb">
+                    <img src="{% static "assets/images/Computer Forensics and Cybercrime.jpg"%}" alt="">
+                    <div class="hover-effect">
+                      <div class="content">
+                        <div class="live">
+                          <a >เรียนรู้เกี่ยวกับการตรวจสอบและวิเคราะห์ข้อมูลที่ถูกโจมตี
+                            และการตรวจสอบเครื่องมือต่างๆที่ใช้ในการป้องกันการโจมตี
+                            และช่วยให้นักศึกษามีความสามารถในการสืบสวนและวิเคราะห์หลักฐานดิจิทัลอย่างมืออาชีพ
+                            พร้อมทั้งมีความเข้าใจในอาชญากรรมทางคอมพิวเตอร์และภัยคุกคามทางไซเบอร์ที่มีความซับซ้อนมากขึ้นในปัจจุบัน
+                           และตอบสนองต่อภัยคุกคามอย่างมีประสิทธิภาพ</a>
+                        </div>
+                        
+                      </div>
+                    </div>
+                  </div>
+                  <div class="down-content">
+                    <div class="avatar">
+                    </div>
+                    <h5 class="card-title">
+                      ภูมิคุ้มกันและความเสียหายทางคอมพิวเตอร์ (Computer Forensics and
+                      Cybercrime)
+                    </h5>
+                  </div> 
+                </div>
+              </div>
+             <div class="col-lg-3 col-sm-6">
+                <div class="item">
+                  <div class="thumb">
+                    <img src="{% static "assets/images/Database Systems.jpg"%}" alt="">
+                    <div class="hover-effect">
+                      <div class="content">
+                        <div class="live">
+                          <a >เรียนรู้เกี่ยวกับการออกแบบ ติดตั้ง และบำรุงรักษาระบบฐานข้อมูล
+                            รวมถึงเรียนรู้ SQL ซึ่งเป็นภาษาคิวรีสำหรับฐานข้อมูล
+                            และให้นักศึกษามีทักษะในการออกแบบและจัดการฐานข้อมูลที่มีประสิทธิภาพ
+                            พร้อมทั้งเข้าใจเทคโนโลยีและแนวทางปฏิบัติที่จำเป็นในการพัฒนาระบบฐานข้อมูลที่ตอบส
+                            นองต่อความต้องการของผู้ใช้งานและสามารถรองรับการขยายตัวของข้อมูลในอนาคตได้</a>
+                        </div>
+                        
+                      </div>
+                    </div>
+                  </div>
+                  <div class="down-content">
+                    <div class="avatar">  
+                    </div> 
+                    <h5 class="card-title" >
+                      การออกแบบและพัฒนาระบบฐานข้อมูล (Database Systems)
+                    </h5>
+                  </div> 
+                </div>
+              </div>
+              <div class="col-lg-3 col-sm-6">
+                <div class="item">
+                  <div class="thumb">
+                    <img src="{% static "assets/images/Image Processing.jpg"%}" alt="">
+                    <div class="hover-effect">
+                      <div class="content">
+                        <div class="live">
+                          <a >เรียนรู้เกี่ยวกับการประมวลผลภาพดิจิทัลและวิเคราะห์ภาพ เช่น
+                            การปรับแต่งภาพ การค้นหาวัตถุ และการสกัดคุณลักษณะจากภาพ
+                            และช่วยให้นักศึกษาเข้าใจวิธีการจัดการและวิเคราะห์ภาพดิจิทัลเพื่อดึงข้อมูลที่มีประโยชน์ออกมา
+                            และนำไปใช้ในงานต่าง ๆ เช่น การวิจัยทางวิทยาศาสตร์ การแพทย์
+                            และการพัฒนาเทคโนโลยีใหม่ ๆ
+                          </a>
+                        </div>
+                        
+                      </div>
+                    </div>
+                  </div>
+                  <div class="down-content">
+                    <div class="avatar">  
+                    </div> 
+                    <h5 class="card-title" >
+                      การประมวลผลภาพ (Image Processing)
+                    </h5>
+                  </div> 
+                </div>
+              </div>
+              
+            </div>
           </div>
-        </div>
-        <div class="contact-info">
-          <p>Phone: 045-643-622</p>
-          <span class="label">หรือติดต่อ</span>
-          <a href="https://www.facebook.com/OASS2021?locale=th_TH/" class="mx-3"
-            ><p class="fw-normal">
-              สำนักส่งเสริมวิชาการและงานทะเบียนจังหวัดศรีสะเกษ
-            </p></a
-          >
-        </div>
-        <div class="student-image">
-          <img
-            src="{% static 'assets/images/sskruregis.jpg' %}"
-            alt="Students"
-            class="students"
-          />
+          <!-- ***** Live Stream End ***** -->
+
+          <!-- ***** จบแล้วทำอาชีพอะไรได้บ้าง ? Start ***** -->
+          <div class="live-stream">
+            <div class="col-lg-12">
+              <div class="heading-section">
+                <h4><em></em>จบแล้วทำอาชีพอะไรได้บ้าง ?</h4>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-3 col-sm-6">
+                <div class="item">
+                  <div class="thumb">
+                    <img src="{% static "assets/images/occupation_1.jpg"%}" alt="">
+                    <div class="hover-effect">
+                      <div class="content">
+                        <div class="live">
+                          <a >ออกแบบและพัฒนาโปรแกรมและแอปพลิเคชันต่าง ๆ
+                            สำหรับคอมพิวเตอร์และอุปกรณ์พกพา</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="down-content">
+                    <h5 class="card-title"> 
+                      นักพัฒนาซอฟต์แวร์ (Software Developer)
+                    </h5>
+                  </div> 
+                </div>
+              </div>
+              <div class="col-lg-3 col-sm-6">
+                <div class="item">
+                  <div class="thumb">
+                    <img src="{% static "assets/images/occupation_2.jpg"%}" alt="">
+                    <div class="hover-effect">
+                      <div class="content">
+                        <div class="live">
+                          <a >ดูแลและจัดการระบบคอมพิวเตอร์และเครือข่ายขององค์กร
+                            ให้แน่ใจว่าระบบทำงานได้อย่างราบรื่นและมีประสิทธิภาพ</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="down-content">
+                    <h5 class="card-title">
+                      วิศวกรระบบ (Systems Engineer)
+                    </h5>
+                  </div> 
+                </div>
+              </div>
+              <div class="col-lg-3 col-sm-6">
+                <div class="item">
+                  <div class="thumb">
+                    <img src="{% static "assets/images/occupation_3.jpg"%}" alt="">
+                    <div class="hover-effect">
+                      <div class="content">
+                        <div class="live">
+                          <a > ออกแบบและดูแลระบบเครือข่ายขององค์กร
+                            รวมถึงการตั้งค่าและการจัดการเซิร์ฟเวอร์และอุปกรณ์เครือข่าย</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="down-content">
+                    <h5 class="card-title">
+                      วิศวกรเครือข่าย (Network Engineer)
+                    </h5>
+                  </div> 
+                </div>
+              </div>
+              <div class="col-lg-3 col-sm-6">
+                <div class="item">
+                  <div class="thumb">
+                    <img src="{% static "assets/images/occupation_4.jpg"%}" alt="">
+                    <div class="hover-effect">
+                      <div class="content">
+                        <div class="live">
+                          <a> วิเคราะห์ข้อมูลจำนวนมากเพื่อค้นหาข้อมูลเชิงลึกและช่วยในการตัดสินใจทางธุรกิจ</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="down-content">
+                    <div class="avatar">
+                    </div>
+                    <h5 class="card-title" >
+                      นักวิเคราะห์ข้อมูล (Data Analyst)
+                    </h5>
+                  </div> 
+                </div>
+              </div>
+              <div class="col-lg-3 col-sm-6">
+                <div class="item">
+                  <div class="thumb">
+                    <img src="{% static "assets/images/occupation_5.jpg"%}" alt="">
+                    <div class="hover-effect">
+                      <div class="content">
+                        <div class="live">
+                          <a > ใช้เทคนิคการเรียนรู้ของเครื่องและการวิเคราะห์ข้อมูลขั้นสูงเพื่อสร้างโมเดลและคาดการณ์แนวโน้มในข้อมูล</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="down-content">
+                    <div class="avatar">
+                    </div>
+                    <h5 class="card-title">
+                      นักวิทยาศาสตร์ข้อมูล (Data Scientist)
+                    </h5>
+                  </div> 
+                </div>
+              </div>
+              <div class="col-lg-3 col-sm-6">
+                <div class="item">
+                  <div class="thumb">
+                    <img src="{% static "assets/images/occupation_6.jpg"%}" alt="">
+                    <div class="hover-effect">
+                      <div class="content">
+                        <div class="live">
+                          <a >ทำการวิจัยในด้านต่าง ๆ เช่น ปัญญาประดิษฐ์ (AI), การเรียนรู้ของเครื่อง
+                            (Machine Learning), หรือการประมวลผลภาพ เพื่อพัฒนาเทคโนโลยีใหม่</a>
+                        </div>                       
+                      </div>
+                    </div>
+                  </div>
+                  <div class="down-content">
+                    <div class="avatar"> 
+                    </div>
+                    <h5 class="card-title">
+                      นักวิจัยทางคอมพิวเตอร์ (Computer Researcher)
+                    </h5>
+                  </div> 
+                </div>
+              </div>
+              <div class="col-lg-3 col-sm-6">
+                <div class="item">
+                  <div class="thumb">
+                    <img src="{% static "assets/images/occupation_7.jpg"%}" alt="">
+                    <div class="hover-effect">
+                      <div class="content">
+                        <div class="live">
+                          <a > ตรวจสอบและป้องกันการโจมตีทางไซเบอร์และการละเมิดความปลอดภัย
+                            รวมถึงการพัฒนามาตรการป้องกันและการตอบสนองต่อเหตุการณ์</a>
+                        </div>                       
+                      </div>
+                    </div>
+                  </div>
+                  <div class="down-content">
+                    <div class="avatar">
+                    </div>
+                    <h5 class="card-title">
+                      นักความปลอดภัยไซเบอร์ (Cybersecurity Specialist)
+                    </h5>
+                  </div> 
+                </div>
+              </div>
+             <div class="col-lg-3 col-sm-6">
+                <div class="item">
+                  <div class="thumb">
+                    <img src="{% static "assets/images/occupation_8.jpg"%}" alt="">
+                    <div class="hover-effect">
+                      <div class="content">
+                        <div class="live">
+                          <a >ออกแบบและจัดการฐานข้อมูลขององค์กร
+                            รวมถึงการสร้างและปรับปรุงฐานข้อมูลเพื่อให้มีประสิทธิภาพสูงสุด</a>
+                        </div>                       
+                      </div>
+                    </div>
+                  </div>
+                  <div class="down-content">
+                    <div class="avatar">  
+                    </div> 
+                    <h5 class="card-title" >
+                      นักออกแบบฐานข้อมูล (Database Designer)
+                    </h5>
+                  </div> 
+                </div>
+              </div>
+              <div class="col-lg-3 col-sm-6">
+                <div class="item">
+                  <div class="thumb">
+                    <img src="{% static "assets/images/occupation_9.jpg"%}" alt="">
+                    <div class="hover-effect">
+                      <div class="content">
+                        <div class="live">
+                          <a >พัฒนาและปรับใช้เทคโนโลยีปัญญาประดิษฐ์ (AI) และการเรียนรู้ของเครื่อง
+                            (Machine Learning) เพื่อสร้างระบบที่สามารถเรียนรู้และตัดสินใจได้เอง
+                          </a>
+                        </div>                      
+                      </div>
+                    </div>
+                  </div>
+                  <div class="down-content">
+                    <div class="avatar">  
+                    </div> 
+                    <h5 class="card-title" >
+                      วิศวกรปัญญาประดิษฐ์ (AI Engineer)
+                    </h5>
+                  </div> 
+                </div>
+              </div>
+              <div class="col-lg-3 col-sm-6">
+                <div class="item">
+                  <div class="thumb">
+                    <img src="{% static "assets/images/occupation_10.jpg"%}" alt="">
+                    <div class="hover-effect">
+                      <div class="content">
+                        <div class="live">
+                          <a >ออกแบบและพัฒนาเว็บไซต์และแอปพลิเคชันเว็บ
+                            รวมถึงการจัดการและปรับปรุงเว็บไซต์เพื่อให้มีประสิทธิภาพและใช้งานได้ดี
+                          </a>
+                        </div>                     
+                      </div>
+                    </div>
+                  </div>
+                  <div class="down-content">
+                    <div class="avatar">  
+                    </div> 
+                    <h5 class="card-title" >
+                      นักพัฒนาเว็บ (Web Developer)
+                    </h5>
+                  </div> 
+                </div>
+              </div>
+              <div class="col-lg-3 col-sm-6">
+                <div class="item">
+                  <div class="thumb">
+                    <img src="{% static "assets/images/occupation_11.jpg"%}" alt="">
+                    <div class="hover-effect">
+                      <div class="content">
+                        <div class="live">
+                          <a >วิจัยและออกแบบประสบการณ์ผู้ใช้ (User Experience)
+                            เพื่อทำให้การใช้งานแอปพลิเคชันหรือเว็บไซต์เป็นไปอย่างราบรื่นและมีความพึงพอใจ
+                          </a>
+                        </div>                      
+                      </div>
+                    </div>
+                  </div>
+                  <div class="down-content">
+                    <div class="avatar">  
+                    </div> 
+                    <h5 class="card-title" >
+                      นักออกแบบประสบการณ์ผู้ใช้ (UX Designer)
+                    </h5>
+                  </div> 
+                </div>
+              </div>
+              <div class="col-lg-3 col-sm-6">
+                <div class="item">
+                  <div class="thumb">
+                    <img src="{% static "assets/images/occupation_12.jpg"%}" alt="">
+                    <div class="hover-effect">
+                      <div class="content">
+                        <div class="live">
+                          <a >ออกแบบส่วนติดต่อผู้ใช้ (User Interface)
+                            ของแอปพลิเคชันและเว็บไซต์เพื่อให้มีความน่าสนใจและใช้งานได้ง่าย
+                          </a>
+                        </div>                      
+                      </div>
+                    </div>
+                  </div>
+                  <div class="down-content">
+                    <div class="avatar">  
+                    </div> 
+                    <h5 class="card-title" >
+                      นักออกแบบส่วนต่อประสานผู้ใช้ (UI Designer)
+                    </h5>
+                  </div> 
+                </div>
+              </div>
+              <div class="col-lg-3 col-sm-6">
+                <div class="item">
+                  <div class="thumb">
+                    <img src="{% static "assets/images/occupation_13.jpg"%}" alt="">
+                    <div class="hover-effect">
+                      <div class="content">
+                        <div class="live">
+                          <a >พัฒนาและออกแบบซอฟต์แวร์ที่ทำงานในระบบฝังตัว เช่น อุปกรณ์ IoT
+                            หรือเครื่องมือทางการแพทย์
+                          </a>
+                        </div>                    
+                      </div>
+                    </div>
+                  </div>
+                  <div class="down-content">
+                    <div class="avatar">  
+                    </div> 
+                    <h5 class="card-title" >
+                      วิศวกรซอฟต์แวร์สำหรับระบบฝังตัว (Embedded Systems Engineer)
+                    </h5>
+                  </div> 
+                </div>
+              </div>
+              <div class="col-lg-3 col-sm-6">
+                <div class="item">
+                  <div class="thumb">
+                    <img src="{% static "assets/images/occupation_14.jpg"%}" alt="">
+                    <div class="hover-effect">
+                      <div class="content">
+                        <div class="live">
+                          <a >จัดการและดูแลฐานข้อมูลขององค์กรเพื่อให้มีการทำงานที่มีประสิทธิภาพและปลอดภัย
+                          </a>
+                        </div>                     
+                      </div>
+                    </div>
+                  </div>
+                  <div class="down-content">
+                    <div class="avatar">  
+                    </div> 
+                    <h5 class="card-title" >
+                      ผู้ดูแลระบบฐานข้อมูล (Database Administrator)
+                    </h5>
+                  </div> 
+                </div>
+              </div>
+              <div class="col-lg-3 col-sm-6">
+                <div class="item">
+                  <div class="thumb">
+                    <img src="{% static "assets/images/occupation_15.jpg"%}" alt="">
+                    <div class="hover-effect">
+                      <div class="content">
+                        <div class="live">
+                          <a >ดูแลและจัดการบริการคลาวด์และโซลูชันการจัดเก็บข้อมูลบนคลาวด์ เช่น AWS,
+                            Azure หรือ Google Cloud
+                          </a>
+                        </div>                    
+                      </div>
+                    </div>
+                  </div>
+                  <div class="down-content">
+                    <div class="avatar">  
+                    </div> 
+                    <h5 class="card-title" >
+                      ผู้เชี่ยวชาญด้านเทคโนโลยีคลาวด์ (Cloud Specialist)
+                    </h5>
+                  </div> 
+                </div>
+              </div>
+              <div class="col-lg-3 col-sm-6">
+                <div class="item">
+                  <div class="thumb">
+                    <img src="{% static "assets/images/occupation_16.jpg"%}" alt="">
+                    <div class="hover-effect">
+                      <div class="content">
+                        <div class="live">
+                          <a >ให้คำแนะนำและคำปรึกษาด้านเทคโนโลยีและการจัดการข้อมูลแก่ธุรกิจและองค์กร
+                          </a>
+                        </div>                    
+                      </div>
+                    </div>
+                  </div>
+                  <div class="down-content">
+                    <div class="avatar">  
+                    </div> 
+                    <h5 class="card-title" >
+                      ที่ปรึกษาด้านเทคโนโลยี (IT Consultant)
+                    </h5>
+                  </div> 
+                </div>
+              </div>
+              <div class="col-lg-3 col-sm-6">
+                <div class="item">
+                  <div class="thumb">
+                    <img src="{% static "assets/images/occupation_17.jpg"%}" alt="">
+                    <div class="hover-effect">
+                      <div class="content">
+                        <div class="live">
+                          <a >ออกแบบและพัฒนาเกมคอมพิวเตอร์และเกมมือถือ
+                            รวมถึงการสร้างกราฟิกและกลไกของเกม
+                          </a>
+                        </div>                    
+                      </div>
+                    </div>
+                  </div>
+                  <div class="down-content">
+                    <div class="avatar">  
+                    </div> 
+                    <h5 class="card-title" >
+                      นักพัฒนาเกม (Game Developer)
+                    </h5>
+                  </div> 
+                </div>
+              </div>
+              <div class="col-lg-3 col-sm-6">
+                <div class="item">
+                  <div class="thumb">
+                    <img src="{% static "assets/images/occupation_18.jpg"%}" alt="">
+                    <div class="hover-effect">
+                      <div class="content">
+                        <div class="live">
+                          <a > พัฒนาอัลกอริธึมและโมเดลการเรียนรู้ของเครื่องเพื่อแก้ปัญหาทางธุรกิจและวิจัย
+                          </a>
+                        </div>                    
+                      </div>
+                    </div>
+                  </div>
+                  <div class="down-content">
+                    <div class="avatar">  
+                    </div> 
+                    <h5 class="card-title" >
+                      นักพัฒนาปัญญาประดิษฐ์และการเรียนรู้ของเครื่อง (AI and Machine Learnin Developer)
+                    </h5>
+                  </div> 
+                </div>
+              </div>
+              <div class="col-lg-12">
+                <div class="main-button">
+                  <a href="{% url "profile" %}">หน้าถัดไป</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ***** จบแล้วทำอาชีพอะไรได้บ้าง ? end ***** -->
+
         </div>
       </div>
     </div>
   </div>
-</div>
+  
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <p>
+            เว็บนี้ทำขึ้นเพื่อโปรโมทสาขาวิทยาการคอมพิวเตอร์และถ้าใครสนใจเข้าเรียนในสาขาของเรา 
+            <a href="https://www.oass.sskru.ac.th/std.sskru/s1.html" >สามารถกดสมัครที่ตรงนี้ได้เลย</a>
+            <br>
+            และสามารถติดตามข่าวสารของสาขาวิทยาการคอมพิวเตอร์ได้ที่: 
+            <a href="https://www.facebook.com/comsci.sskru" title="free CSS templates">Facebook</a>
+            ได้นะครับ
+        </p>
+        </div>
+      </div>
+    </div>
+  </footer>
 
-{% endblock content %}
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+  <script src="{% static "vendor/jquery/jquery.min.js" %}"></script>
+  <script src="{% static "vendor/bootstrap/js/bootstrap.min.js" %}"></script>
+
+  <script src="{% static "assets/js/isotope.min.js" %}"></script>
+  <script src="{% static "assets/js/owl-carousel.js" %}"></script>
+  <script src="{% static "assets/js/tabs.js" %}"></script>
+  <script src="{% static "assets/js/popup.js" %}"></script>
+  <script src="{% static "assets/js/custom.js" %}"></script>
+
+  </body>
+
+</html>

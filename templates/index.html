@@ -1,5 +1,4 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,15 +6,15 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" href="{% static 'assets/images/CSlogo.png' %}">
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <title>Cyborg - Awesome HTML5 Template</title>
+    <title>Computer science</title>
+
+    <link rel="icon" href="{% static "assets/images/CSlogo.png" %}" type="image/png">
 
     <!-- Bootstrap core CSS -->
     <link href="{% static "vendor/bootstrap/css/bootstrap.min.css" %}" rel="stylesheet">
-
 
     <!-- Additional CSS Files -->
     <link rel="stylesheet" href="{% static "assets/css/fontawesome.css" %}">
@@ -30,6 +29,11 @@ TemplateMo 579 Cyborg Gaming
 https://templatemo.com/tm-579-cyborg-gaming
 
 -->
+    <style>
+      body {
+          font-family: 'Kanit', sans-serif;
+     }
+    </style>
   </head>
 
 <body>
@@ -50,14 +54,12 @@ https://templatemo.com/tm-579-cyborg-gaming
   <!-- ***** Header Area Start ***** -->
   <header class="header-area header-sticky">
     <div class="container">
-        <div class="row"> 
+        <div class="row">
             <div class="col-12">
                 <nav class="main-nav">
                     <!-- ***** Logo Start ***** -->
                     <a href="{% url "index" %}" class="logo">
-                      <div class="ms-4">
-                        <img src="{% static "assets/images/logo-04.png" %}" alt="" >
-                      </div>
+                        <img src="{% static "assets/images/logo-04.png" %}" alt="">
                     </a>
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Search End ***** -->
@@ -70,11 +72,10 @@ https://templatemo.com/tm-579-cyborg-gaming
                     <!-- ***** Search End ***** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
-                        <li><a href="{% url "index" %}" {% if request.resolver_match.url_name == 'index' %}class="active"{% endif %}>Home</a></li>
-                        <li><a href="{% url "login" %}" {% if request.resolver_match.url_name == 'login' %}class="active"{% endif %}>ข้อมูล</a></li>
-                        <li><a href="{% url "registers" %}" {% if request.resolver_match.url_name == 'registers' %}class="active"{% endif %}>กิจกรรม</a></li>
-                        <li><a href="{% url "streams" %}" {% if request.resolver_match.url_name == 'streams' %}class="active"{% endif %}>สมัคร</a></li>
-                        <li><a href="{% url "profile" %}" {% if request.resolver_match.url_name == 'profile' %}class="active"{% endif %}>ติดต่อเรา<img src="{% static "assets/images/profile-header.jpg" %}" alt=""></a></li>
+                        <li><a href="{% url "index" %}" class="active">Home</a></li>
+                        <li><a href="{% url "browse" %}">สมัคร</a></li>
+                        <li><a href="{% url "streams" %}">เกี่ยวกับเรา</a></li>
+                        <li><a href="{% url "profile" %}">ติดต่อเรา <img src="{% static "assets/images/CSlogo.png" %}" alt=""></a></li>
                     </ul>   
                     <a class='menu-trigger'>
                         <span>Menu</span>
@@ -86,21 +87,24 @@ https://templatemo.com/tm-579-cyborg-gaming
     </div>
   </header>
   <!-- ***** Header Area End ***** -->
+
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
         <div class="page-content">
-          {% block content %}
+
           <!-- ***** Banner Start ***** -->
           <div class="main-banner">
+            <video autoplay muted loop id="myVideo">
+              <source src="{% static "assets/images/cs-bg.mp4" %}" type="video/mp4">
+            </video>
             <div class="row">
               <div class="col-lg-7">
                 <div class="header-text">
-                  <h6>Welcome To </h6>
-                  <h4><em>Computer Science</em></h4>
-                  <h3>สาขาวิทยาการคอมพิวเตอร์</h3>
+                  <h6>Welcome To Cyborg</h6>
+                  <h4><em>Browse</em> Our Popular Games Here</h4>
                   <div class="main-button">
-                    <a href="{% url "login" %}">ข้อมูลของเรา</a>
+                    <a href="{% url "browse" %}">สนใจสมัคร</a>
                   </div>
                 </div>
               </div>
@@ -113,47 +117,58 @@ https://templatemo.com/tm-579-cyborg-gaming
             <div class="row">
               <div class="col-lg-12">
                 <div class="heading-section">
-                  <h4><em>Most Popular</em> Right Now</h4>
+                  <h4><em>กิจกรรมที่น่าสนใจ</em> computer science</h4>
                 </div>
                 <div class="row">
                   <div class="col-lg-3 col-sm-6">
                     <div class="item">
-                      <img src="{% static "assets/images/home.jpg" %}" alt="">
-                      <h4>Fortnite<br><span>Sandbox</span></h4>
-                      <ul>
-                        <li><i class="fa fa-star"></i> 4.8</li>
-                        <li><i class="fa fa-download"></i> 2.3M</li>
-                      </ul>
+                      <img src="https://scontent-bkk1-1.xx.fbcdn.net/v/t39.30808-6/450055683_863892982450981_151007795583764724_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_ohc=l-Rzrr8qD0YQ7kNvgHJ0xg4&_nc_ht=scontent-bkk1-1.xx&oh=00_AYCDVJ1Ae8Saf9ZzRoVwKPerRod9SdyoBDoEB_tFeohA9g&oe=66E48EA1" alt="">
+                      <div class="item-content">
+                      <h4>Sisaket Robotics Competition<br><span>สาขาวิทยาการคอมพิวเตอร์ ร่วมดำเนินการจัดการแข่งขัน Sisaket Robotics
+                        Competition ครั้งที่ 2 ประจำปี 2567</span></h4>
+                      </div>
+                      <div class="main-button">
+                        <a href="https://www.facebook.com/share/p/cipMrXs7yPKQXHRp/">More</a>
+                      </div>
                     </div>
                   </div>
                   <div class="col-lg-3 col-sm-6">
                     <div class="item">
-                      <img src="{% static "assets/images/popular-02.jpg" %}" alt="">
-                      <h4>PubG<br><span>Battle S</span></h4>
-                      <ul>
-                        <li><i class="fa fa-star"></i> 4.8</li>
-                        <li><i class="fa fa-download"></i> 2.3M</li>
-                      </ul>
+                      <img src="https://scontent.fnak4-2.fna.fbcdn.net/v/t39.30808-6/451093020_361438926980574_4049424285477342336_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_ohc=mhwD1jEIurUQ7kNvgGG0qux&_nc_ht=scontent.fnak4-2.fna&_nc_gid=A-dPjvVsCXjQDonpqeISSyx&oh=00_AYA55FnNqRnhvIXTTdXBalKZ9081UKDP0umBxFoTlWG3pA&oe=66E22AC4" alt="">
+                      <div class="item-content">
+                      <h4>บรรยากาศรับน้องสาขาวิทย์คอม<br><span>โครงการสานสัมพันธ์พี่น้อง สาขาวิทยาการคอมพิวเตอร์
+                        คณะศิลปศาสตร์และวิทยาศาสตร์ มหาวิทยาลัยราชภัฏศรีสะเกษ วันที่ 13 ก.ค.
+                        2567</span></h4>
+                      </div>
+                      <div class="main-button">
+                        <a href="https://www.facebook.com/share/v/ZeA7YViZrHyWpqs5/">More</a>
+                      </div>
                     </div>
                   </div>
                   <div class="col-lg-3 col-sm-6">
                     <div class="item">
-                      <img src="{% static "assets/images/popular-03.jpg" %}" alt="">
-                      <h4>Dota2<br><span>Steam-X</span></h4>
-                      <ul>
-                        <li><i class="fa fa-star"></i> 4.8</li>
-                        <li><i class="fa fa-download"></i> 2.3M</li>
-                      </ul>
+                      <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/448622080_790209936571197_5902258094249407768_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=0024fc&_nc_eui2=AeGd6i8XG3eWwXH63cEqn1MDmyFb9ZMxx0GbIVv1kzHHQZuqJ3r1v_AKUAOU4_-mOeuVYv5kkNlPzlCj1Owl_LUP&_nc_ohc=AX83hd5LvbMQ7kNvgEroda2&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&cb_e2o_trans=q&_nc_gid=A3y7XPupz2xaMPIV0Z0gOJb&oh=03_Q7cD1QE5VML7g9dYCGhvkwA9H-azFTw0Lu3c2youQe4mCDOyTA&oe=67025BE3" alt="">
+                      <div class="item-content">
+                      <h4>บรรยากาศภายในห้องเรียน<br><span>ชั้นปีที่ 2 ได้ฝึกฝนการพัฒนาโปรแกรมร่วมกันเป็นทีมผ่าน Collaborator
+                        บน Github และแยกกันพัฒนาโปรแกรมของตัวเองเป็น Branch.
+                        โชคดีที่ได้รุ่นพี่ชั้นปีที่ 3 มาทำหน้าที่เป็น TA</span></h4>
+                      </div>
+                      <div class="main-button">
+                        <a href="https://www.facebook.com/share/p/cipMrXs7yPKQXHRp/">More</a>
+                      </div>
                     </div>
                   </div>
                   <div class="col-lg-3 col-sm-6">
                     <div class="item">
-                      <img src="{% static "assets/images/popular-04.jpg" %}" alt="">
-                      <h4>CS-GO<br><span>Legendary</span></h4>
-                      <ul>
-                        <li><i class="fa fa-star"></i> 4.8</li>
-                        <li><i class="fa fa-download"></i> 2.3M</li>
-                      </ul>
+                      <img src="https://scontent.fnak1-1.fna.fbcdn.net/v/t39.30808-6/454699305_887859066721039_5475030221423035018_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHRigIRZawSGFug-FU9SRHgoXA1sxh2mtuhcDWzGHaa24I2c_UaxOVzXHqUA6kQKOWMhbdTJz_c8HurZTyvEOqL&_nc_ohc=jJMPlcWTCKkQ7kNvgGEnkMf&_nc_ht=scontent.fnak1-1.fna&cb_e2o_trans=q&_nc_gid=As-JuX4bQ0n5cMz5C9LEj0S&oh=00_AYD8Ik1pB9mYNph-ArMhw33G7_-DSbAhDqsRz3JP_j8VIA&oe=66E0BD39" alt="">
+                      <div class="item-content">
+                      <h4>กิจกรรมประกาศดาวเดือนคณะศิลปศาสตร์และวิทยาศาสตร์<br><span>สาขาวิทยาการคอมพิวเตอร์ ขอแสดงความยินดีกับน้องนนท์... G6 นนท์
+                        นายนนทพัทธ์ นะทีศรี ผู้ที่ชนะการประกวด LASC Brand ambassador 2024
+                        ประเภท Gentleman 👑 The Winner👑 🎉🥳👏</span></h4>
+                      </div>
+                      <div class="main-button">
+                        <a href="https://www.facebook.com/share/p/kLEWSm3YSKHT8UWN/">More</a>
+                      </div>
                     </div>
                   </div>
                   <div class="col-lg-6">
@@ -161,22 +176,25 @@ https://templatemo.com/tm-579-cyborg-gaming
                       <div class="row">
                         <div class="col-lg-6 col-sm-6">
                           <div class="item inner-item">
-                            <img src="{% static "assets/images/popular-05.jpg" %}" alt="">
-                            <h4>Mini Craft<br><span>Legendary</span></h4>
-                            <ul>
-                              <li><i class="fa fa-star"></i> 4.8</li>
-                              <li><i class="fa fa-download"></i> 2.3M</li>
-                            </ul>
+                            <img src="https://scontent.fnak1-1.fna.fbcdn.net/v/t39.30808-6/273006120_304321131741505_4126890353415070827_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=86c6b0&_nc_eui2=AeEEivFAJbKyTa07dr6DstbJctiIfN4XX6ly2Ih83hdfqT1rlg98BLwRL_WvXs502t9ncVPNR4Oo1kHKh1Zc6Ali&_nc_ohc=shoH2CN1hAEQ7kNvgF-fkuR&_nc_ht=scontent.fnak1-1.fna&cb_e2o_trans=q&oh=00_AYBUZ79qIZh8LOsrvHCP50f0TQzCDIFA1VmmeCXI1b5IEw&oe=66E0B42C" alt="">
+                              <div class="item-content">
+                              <h4>พิธีไหว้ครู<br><span>ไหว้ครูภายในสาขาวิทยาการคอมพิวเตอร์ ประจำปีการศึกษา 2567👏</span></h4>
+                              </div>
+                              <div class="main-button">
+                                <a href="https://www.facebook.com/share/v/Y5XvtAeSqf45qPU4/">More</a>
+                              </div>
                           </div>
                         </div>
                         <div class="col-lg-6 col-sm-6">
                           <div class="item">
-                            <img src="{% static "assets/images/popular-06.jpg" %}" alt="">
-                            <h4>Eagles Fly<br><span>Matrix Games</span></h4>
-                            <ul>
-                              <li><i class="fa fa-star"></i> 4.8</li>
-                              <li><i class="fa fa-download"></i> 2.3M</li>
-                            </ul>
+                            <img src="https://scontent.fnak4-2.fna.fbcdn.net/v/t39.30808-6/458086235_902966078543671_6463858313980236852_n.jpg?stp=cp6_dst-jpg&_nc_cat=108&ccb=1-7&_nc_sid=127cfc&_nc_ohc=evhXmOurH54Q7kNvgGzVfIY&_nc_ht=scontent.fnak4-2.fna&oh=00_AYCGnVRpXWaIqlQ74CW2cXUh0ud1YExrZXVi-GfWY1vVMA&oe=66E25F95" alt="">
+                              <div class="item-content">
+                              <h4>โครงการ Hackathon<br><span>#สาขาวิทยาการคอมพิวเตอร์ ร่วมโครงการ Hackathon @ Si Sa Ket ซึ่งจัดขึ้นใจช่วงวันที่ 30 ส.ค. - 1 ก.ย. 2567 รวมเป็นระยะเวลา 3 วัน ณ โรงแรมพรมพิมาน จังหวัดศรีสะเกษ
+                                 </span></h4>
+                              </div>
+                              <div class="main-button">
+                                <a href="https://www.facebook.com/share/p/31vWg3dWyeFddNyW/">More</a>
+                              </div>                            
                           </div>
                         </div>
                       </div>
@@ -184,27 +202,29 @@ https://templatemo.com/tm-579-cyborg-gaming
                   </div>
                   <div class="col-lg-3 col-sm-6">
                     <div class="item">
-                      <img src="{% static "assets/images/popular-07.jpg" %}" alt="">
-                      <h4>Warface<br><span>Max 3D</span></h4>
-                      <ul>
-                        <li><i class="fa fa-star"></i> 4.8</li>
-                        <li><i class="fa fa-download"></i> 2.3M</li>
-                      </ul>
+                      <img src="https://scontent.fnak4-1.fna.fbcdn.net/v/t39.30808-6/458307543_904994318340847_5680965862238471539_n.jpg?stp=dst-jpg_s600x600&_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_ohc=tJ1-S7EgkJMQ7kNvgHSBuBg&_nc_ht=scontent.fnak4-1.fna&_nc_gid=ATDalOaWDzNm5UhPq0rDXVa&oh=00_AYDktWfgNdWZlWOh0sKclDVyJp6HlqZbq1bsYKjqvU9LPg&oe=66E22627" alt="">
+                        <div class="item-content">
+                        <h4>พัฒนาแอปพลิเคชัน<br><span>ระบบสำหรับสั่งจองฉลองเมือศรีสะเกษ​ 242 ปี พัฒนาโดย ผู้ช่วยศาสตราจารย์พิศาล สุขขี และนักศึกษาชั้นปีที่ 3 ของ #สาขาวิชาวิทยาการคอมพิวเตอร์</span></h4>
+                        </div>
+                        <div class="main-button">
+                          <a href="https://www.facebook.com/share/p/vKCYonstgCqPidDC/">More</a>
+                        </div>                      
                     </div>
                   </div>
                   <div class="col-lg-3 col-sm-6">
                     <div class="item">
-                      <img src="{% static "assets/images/popular-08.jpg" %}" alt="">
-                      <h4>Warcraft<br><span>Legend</span></h4>
-                      <ul>
-                        <li><i class="fa fa-star"></i> 4.8</li>
-                        <li><i class="fa fa-download"></i> 2.3M</li>
-                      </ul>
+                      <img src="https://scontent.fnak4-2.fna.fbcdn.net/v/t39.30808-6/458354714_904431161730496_2172307049693186138_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=127cfc&_nc_ohc=KzOU8LejpFEQ7kNvgGzhp95&_nc_ht=scontent.fnak4-2.fna&_nc_gid=Ax7u59INPm5_ri-SCRlYKNK&oh=00_AYBM_hRcNuPtZVcWgy62A74mqlr2cmAtKftm506Zgk17yQ&oe=66E2561A" alt="">
+                        <div class="item-content">
+                        <h4>จัดอบรมหลักสูตร<br><span>ผู้ช่วยศาสตราจารย์พิศาล สุขขี อาจารย์ประจำ #สาขาวิชาวิทยาการคอมพิวเตอร์ ได้รับเชิญให้เป็นวิทยากรในโครงการอบรมเชิงปฏิบัติการเพื่อการเสริมสร้างศักยภาพการนำเสนอโครงการด้วย AI และ Project Pitching</span></h4>
+                        </div>
+                        <div class="main-button">
+                          <a href="https://www.facebook.com/share/p/NYcXe2i19mp7GMNV/">More</a>
+                        </div>
                     </div>
                   </div>
                   <div class="col-lg-12">
                     <div class="main-button">
-                      <a href="browse.html">Discover Popular</a>
+                      <a href="{% url "browse" %}">หน้าถัดไป </a>
                     </div>
                   </div>
                 </div>
@@ -213,50 +233,6 @@ https://templatemo.com/tm-579-cyborg-gaming
           </div>
           <!-- ***** Most Popular End ***** -->
 
-          <!-- ***** Gaming Library Start ***** -->
-          {% comment %} <div class="gaming-library">
-            <div class="col-lg-12">
-              <div class="heading-section">
-                <h4><em>Your Gaming</em> Library</h4>
-              </div>
-              <div class="item">
-                <ul>
-                  <li><img src="{% static "assets/images/game-01.jpg" %}" alt="" class="templatemo-item"></li>
-                  <li><h4>Dota 2</h4><span>Sandbox</span></li>
-                  <li><h4>Date Added</h4><span>24/08/2036</span></li>
-                  <li><h4>Hours Played</h4><span>634 H 22 Mins</span></li>
-                  <li><h4>Currently</h4><span>Downloaded</span></li>
-                  <li><div class="main-border-button border-no-active"><a href="#">Donwloaded</a></div></li>
-                </ul>
-              </div>
-              <div class="item">
-                <ul>
-                  <li><img src="{% static "assets/images/game-02.jpg" %}" alt="" class="templatemo-item"></li>
-                  <li><h4>Fortnite</h4><span>Sandbox</span></li>
-                  <li><h4>Date Added</h4><span>22/06/2036</span></li>
-                  <li><h4>Hours Played</h4><span>740 H 52 Mins</span></li>
-                  <li><h4>Currently</h4><span>Downloaded</span></li>
-                  <li><div class="main-border-button"><a href="#">Donwload</a></div></li>
-                </ul>
-              </div>
-              <div class="item last-item">
-                <ul>
-                  <li><img src="{% static "assets/images/game-03.jpg" %}" alt="" class="templatemo-item"></li>
-                  <li><h4>CS-GO</h4><span>Sandbox</span></li>
-                  <li><h4>Date Added</h4><span>21/04/2036</span></li>
-                  <li><h4>Hours Played</h4><span>892 H 14 Mins</span></li>
-                  <li><h4>Currently</h4><span>Downloaded</span></li>
-                  <li><div class="main-border-button border-no-active"><a href="#">Donwloaded</a></div></li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-lg-12">
-              <div class="main-button">
-                <a href="profile.html">View Your Library</a>
-              </div>
-            </div>
-          </div>
-          <!-- ***** Gaming Library End ***** -->
         </div>
       </div>
     </div>
@@ -266,25 +242,24 @@ https://templatemo.com/tm-579-cyborg-gaming
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <p>Copyright © 2036 <a href="#">Cyborg Gaming</a> Company. All rights reserved. 
+          <p>เว็บนี้ทำขึ้นเพื่อโปรโมทสาขาวิทยาการคอมพิวเตอร์และถ้าใครสนใจเข้าเรียนในสาขาของเรา <a href="https://www.oass.sskru.ac.th/std.sskru/s1.html">สามารถกดสมัครที่ตรงนี้ได้เลย</a> 
           
-          <br>Design: <a href="https://templatemo.com" target="_blank" title="free CSS templates">TemplateMo</a>  Distributed By <a href="https://themewagon.com" target="_blank" >ThemeWagon</a></p>
+          <br>และสามารถติดตามข่าวสารของสาขาวิทยาการคอมพิวเตอร์ได้ที่: <a href="https://www.facebook.com/comsci.sskru" target="_blank" title="free CSS templates">Facebook</a> ได้นะครับ</p>
         </div>
       </div>
     </div>
-  </footer> {% endcomment %}
-  {% endblock content %}
+  </footer>
+
   <!-- Scripts -->
   <!-- Bootstrap core JavaScript -->
-  <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
-  <script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+  <script src="{% static "vendor/jquery/jquery.min.js" %}"></script>
+  <script src="{% static "vendor/bootstrap/js/bootstrap.min.js" %}"></script>
 
-  <script src="{% static 'assets/js/isotope.min.js' %}"></script>
-  <script src="{% static 'assets/js/owl-carousel.js' %}"></script>
-  <script src="{% static 'assets/js/tabs.js' %}"></script>
-  <script src="{% static 'assets/js/popup.js' %}"></script>
-  <script src="{% static 'assets/js/custom.js' %}"></script>
-  
+  <script src="{% static "assets/js/isotope.min.js" %}"></script>
+  <script src="{% static "assets/js/owl-carousel.js" %}"></script>
+  <script src="{% static "assets/js/tabs.js" %}"></script>
+  <script src="{% static "assets/js/popup.js" %}"></script>
+  <script src="{% static "assets/js/custom.js" %}"></script>
 
   </body>
 
