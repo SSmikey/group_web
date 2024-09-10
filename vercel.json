@@ -11,6 +11,15 @@
         "config": {
           "distDir": "staticfiles_build"
         }
+      },
+      {
+        "src": "manage.py",
+        "use": "@vercel/python",
+        "config": { "zeroConfig": true }
+      },
+      {
+        "src": "staticfiles_build/statics/**/*",
+        "use": "@vercel/static"
       }
     ],
     "routes": [
