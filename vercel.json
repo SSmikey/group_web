@@ -20,13 +20,7 @@
       {
         "src": "staticfiles_build/statics/**/*",
         "use": "@vercel/static"
-      },
-      {
-        "scripts": {
-          "build": "python manage.py collectstatic --noinput && vercel build"
-        }
       }
-      
     ],
     "routes": [
       {
@@ -36,6 +30,10 @@
       {
         "src": "/(.*)",
         "dest": "group_web/wsgi.py"
+      },
+      {
+        "src": "/static/(.*)",
+        "dest": "/staticfiles_build/statics/$1"
       }
     ]
   }
